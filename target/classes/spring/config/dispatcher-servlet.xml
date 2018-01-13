@@ -16,9 +16,15 @@
 		<property name="interceptors">
 			<list>
 				<ref bean="interCeptors"/>
+				<ref bean="localeChangeInterceptor"/>
 			</list>
 		</property>
 	</bean>
+	
+	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language"/>
+	</bean>
+
 	
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
 	

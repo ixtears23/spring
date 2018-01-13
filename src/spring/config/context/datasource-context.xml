@@ -3,6 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
+
+	<!-- 암호화된 문자열 복호화 -->
 	<bean id="environmentVariablesConfiguration" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
 	    <property name="algorithm" value="PBEWithMD5AndDES"/>
 	    <property name="passwordEnvName" value="APP_ENCRYPTION_PASSWORD"/>
@@ -22,6 +24,7 @@
 	    </property>
 	</bean>
 	    
+    <!-- datasouce -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 	    <property name="driverClassName" value="${mysql.driverClassName}" /> 
 	    <property name="url" value="${mysql.url}" />
@@ -29,11 +32,13 @@
 	    <property name="password" value="${mysql.password}" />
 	</bean>
 
+	<!-- mybatis 설정 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath*:spring/mvc/**/mapper/*.java" />
 	</bean>
 	
+	<!-- mybatis transaction -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	  <property name="dataSource" ref="dataSource" />
 	</bean>

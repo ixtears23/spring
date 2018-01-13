@@ -7,6 +7,7 @@ public class EncMake {
 
 	public static void main(String[] args) {
 		
+		// 일반문자열 암호화
 		EnvironmentStringPBEConfig environmentStringPBEConfig = new EnvironmentStringPBEConfig();
 		environmentStringPBEConfig.setAlgorithm("PBEWithMD5AndDES");
 		environmentStringPBEConfig.setPasswordEnvName("APP_ENCRYPTION_PASSWORD");
