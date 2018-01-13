@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- 다국어를 위한 messagesource 설정 -->
+	<!-- 
+			예) locale이 ko 이고 basenames 가 아래 value 값일 경우 
+			spring/config/prop/message/home_ko.properties 파일을 찾음. (basenames_locale.properties)
+	 -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="defaultEncoding" value="UTF-8"/>
+	    <property name="basenames">
+	        <list>
+	            <value>classpath:spring/config/prop/message/home</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<!-- locale default 설정 -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	    <property name="defaultLocale" value="en"/>
+	</bean>
+</beans>
