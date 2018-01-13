@@ -1,4 +1,4 @@
-package spring.mvc.home.controller;
+package spring.test;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig;

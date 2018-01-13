@@ -17,7 +17,7 @@
 	    <constructor-arg ref="configurationEncryptor"/>
 	    <property name="locations">
 	        <list>
-	            <value>classpath:spring/config/prop/*-prop.properties</value>
+	            <value>classpath:spring/config/prop/config/*-config.properties</value>
 	        </list>
 	    </property>
 	</bean>
@@ -38,5 +38,4 @@
 	  <property name="dataSource" ref="dataSource" />
 	</bean>
 
-	
 </beans>
