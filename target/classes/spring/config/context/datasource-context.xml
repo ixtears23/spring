@@ -37,4 +37,10 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath*:spring/mvc/**/mapper/*.java" />
 	</bean>
+	
+	<!-- mybatis transaction -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	  <property name="dataSource" ref="dataSource" />
+	</bean>
+
 </beans>
