@@ -22,8 +22,6 @@
 	</bean>
 	
 	
-	
-	
 	<!-- language 파라미터로 locale setting -->
 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 		<property name="paramName" value="language"/>
@@ -52,8 +50,19 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>
+		<property name="order" value="2"/>
 	</bean>
 	
+	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" >
+	    <property name="order" value="1"></property>
+	</bean>
 	
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/views/layout/tiles-layout.xml</value>
+			</list>
+		</property>
+	</bean>
 
 </beans>
