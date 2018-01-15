@@ -31,7 +31,6 @@
                     <tiles:insertAttribute name="header" />
                 </div>
             </div>
-           	<!-- 
             <div class="row">
                 <div class="col-md-9">
                     <tiles:insertAttribute name="banner" />
@@ -40,9 +39,7 @@
                     <tiles:insertAttribute name="login" />
                 </div>
             </div>
-            -->
             <div class="row">
-            	<!-- 
                 <div class="col-md-2">
                     <tiles:insertAttribute name="left" />
                 </div>
@@ -50,13 +47,6 @@
                     <tiles:insertAttribute name="main" />
                 </div>
                 <div class="col-md-2">
-                    <tiles:insertAttribute name="right" />
-                </div>
-                 -->
-                <div class="col-md-2">
-                    <tiles:insertAttribute name="left" />
-                </div>
-                <div class="col-md-10">
                     <tiles:insertAttribute name="right" />
                 </div>
             </div>

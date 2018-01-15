@@ -3,6 +3,7 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
+<!-- 
 <tiles-definitions>
 	<definition name="default" template="/WEB-INF/views/layout/default/default-layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/layout/default/header.jsp"/>
@@ -14,8 +15,8 @@
 		<put-attribute name="right" value="/WEB-INF/views/{1}.jsp"/>
 	</definition>
 </tiles-definitions>
+-->
 
-<!-- 
 <tiles-definitions>
     <definition name="layout" template="/WEB-INF/views/layout.jsp">
         <put-attribute name="title" value="메인페이지" />
@@ -36,4 +37,3 @@
         <put-attribute name="main" value="/WEB-INF/views/{1}/{2}.jsp" />
     </definition>
 </tiles-definitions>
- -->
