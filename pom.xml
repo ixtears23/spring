@@ -34,6 +34,7 @@
   
   	<properties>
         <org.apache.tiles.version>3.0.8</org.apache.tiles.version>
+        <log4j2.version>2.10.0</log4j2.version>
     </properties>
   
 	<dependencies>
@@ -143,6 +144,28 @@
 	        <artifactId>tiles-core</artifactId>
 	        <version>${org.apache.tiles.version}</version>
 	    </dependency>
+		<dependency>
+		   <groupId>org.apache.logging.log4j</groupId>
+		   <artifactId>log4j-slf4j-impl</artifactId>
+		   <version>${log4j2.version}</version>
+		 </dependency>
+		 <!-- Log4j API and Core implementation required for binding -->
+		<dependency>
+		   <groupId>org.apache.logging.log4j</groupId>
+		   <artifactId>log4j-api</artifactId>
+		   <version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.apache.logging.log4j</groupId>
+		   <artifactId>log4j-core</artifactId>
+		   <version>${log4j2.version}</version>
+		</dependency>
+		<!-- Log4j -->
+		<dependency>
+		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+		    <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+		    <version>1.16</version>
+		</dependency>
 	</dependencies>
 
 </project>

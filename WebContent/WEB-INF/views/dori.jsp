@@ -8,29 +8,100 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
 <script>
-	var map = "<c:out value='${map }'/>";
-	var map2 = '${map}';
-	console.log(map);
+	
+	$(document).ready(function() {
+		
+		$("#btnSearch").on("click", function(e) {
+			e.preventDefault();
+			
+			$.post( contextPath + "/home/setUser.json", $("#form").serialize())
+			  .done(function( data ) {
+			    alert( "Data Loaded: " + data );
+			  });
+			
+		});
+	})
+	
+	$.fn.postAjax = function () {
+		
+	}
+	
+	$( document ).ajaxComplete(function() {
+		  $( ".log" ).text( "Triggered ajaxComplete handler." );
+	});
+	
+	
+	function ajax(){
+		$.ajax({
+			  type: "POST",
+			  url: url,
+			  data: data,
+			  success: success,
+			  dataType: dataType
+			});
+		
+		$.post( "ajax/test.html", function( data ) {
+			  $( ".result" ).html( data );
+			});
+	}
+	
 </script>
 
 </head>
 
 <body>
-	<spring:message code="title"/>
-	<form>
-<%-- 	<c:set var="t" value="<script type='text/javascript'>alert(1);</script>" /> --%>
-		${t}
-<%-- 	<c:out value="${t}" escapeXml="true" /> --%>
-	<c:out value="${t}" escapeXml="false" />
-	
-		<input type="text" name="map" value="<c:out value="${map }"/>"/>
-		<input type="text" name="map2" value="<c:out value="${map2 }"/>"/>
+	<spring:message code="title" />
+	<form id="form">
+		<table>
+			<colgroup>
+				<col width="10%">
+				<col width="90%">
+			</colgroup>
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<th>
+						<label for="id">아이디</label>
+					</th>
+					<td>
+						<input type="text" id="id" name="id" required="required"/>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label for="id">이름</label>
+					</th>
+					<td>
+						<input type="text" id="name" name="name" required="required"/>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label for="password">비밀번호</label>
+					</th>
+					<td>
+						<input type="text" id="password" name="password" required="required"/>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+			
+			</tfoot>		
+		</table>
+		<input type="button" id="btnSearch" name="btnSearch" value="등록"/>
+		
 	
 	</form>
-	<h1>반갑습니다.</h1>
-	<h2>저는 도리삼춘 입니다.</h2>
+	
+	<div class="trigger">Trigger</div>
+	<div class="result"></div>
+	<div class="log"></div>
 </body>
 </html>

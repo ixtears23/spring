@@ -21,6 +21,12 @@
     width: 100%;
 }
 </style>
+
+<script>
+
+	var contextPath = "${pageContext.request.contextPath}";
+
+</script>
 </head>
  
 <body>

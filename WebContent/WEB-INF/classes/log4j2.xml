@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+	<File name="file" fileName="D:/log/log.txt" append="true">
+		<PatternLayout pattern="%d %-5p [%t] %-17c{2} (%13F:%L) %3x = %m%n" />
+	</File>
+	</Appenders>
+	
+	<Loggers>
+		<Logger name="info" level="INFO" additivity="false">
+			<AppenderRef ref="file"/>
+		</Logger>
+		
+		<Root level="INFO">
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+</Configuration>
+
